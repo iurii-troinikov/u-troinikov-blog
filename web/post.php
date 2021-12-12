@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{DV.Campus} PHP Framework</title>
+    <title>Iurii Troinikov Blog</title>
     <style>
         header,
         main,
         footer {
             border: 1px dashed black;
         }
-        .product-list {
+        .post-list {
             display: flex;
         }
-        .product-list .product {
+        .post-list .post {
             max-width: 30%;
         }
     </style>
 </head>
 <body>
 <header>
-    <a href="/" title="{DV.Campus} PHP Framework">
-        <img src="logo.jpg" alt="{DV.Campus} Logo" width="200"/>
+    <a href="/" title="Iurii Troinikov Blog">
+        <img src="logo.jpg" alt="Blog Logo" width="200"/>
     </a>
     <menu>
         <li>Category 1</li>
@@ -30,11 +30,10 @@
     </menu>
 </header>
 <main>
-    <img src="product-placeholder.png" alt="Product 1" width="300"/>
-    <h1>Product 1</h1>
+    <img src="post-placeholder.jpg" alt="Post 1" width="300"/>
+    <h1>Post 1</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque dolore eos exercitationem, impedit laudantium minima minus molestias quaerat quam, quidem repellendus sit temporibus veniam veritatis.</p>
-    <span>$33.33</span>
-    <button type="button">Add To Cart</button>
+    <button type="button">Read</button>
 </main>
 <footer>
     <nav>
@@ -50,7 +49,7 @@
             </li>
         </ul>
     </nav>
-    <p>© Default Value 2021. All Rights Reserved.</p>
+    <p>© Iurii Troinikov 2021. All Rights Reserved.</p>
 </footer>
 </body>
 </html>

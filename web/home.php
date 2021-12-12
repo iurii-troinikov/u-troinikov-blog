@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{DV.Campus} PHP Framework</title>
+    <title>Iurii Troinikov Blog</title>
     <style>
         header,
         main,
         footer {
             border: 1px dashed black;
         }
-        .product-list {
+        .post-list {
             display: flex;
         }
-        .product-list .product {
+        .post-list .post {
             max-width: 30%;
         }
     </style>
 </head>
 <body>
 <header>
-    <a href="/" title="{DV.Campus} PHP Framework">
-        <img src="logo.jpg" alt="{DV.Campus} Logo" width="200"/>
+    <a href="/" title="Iurii Troinikov Blog">
+        <img src="logo.jpg" alt="Blog Logo" width="200"/>
     </a>
     <menu>
         <li>Category 1</li>
@@ -30,32 +30,29 @@
     </menu>
 </header>
 <main>
-    <section title="Recently Viewed Products">
-        <h2>Recently Viewed Products</h2>
-        <div class="product-list">
-            <div class="product">
-                <a href="/product-1-url" title="Product 1">
-                    <img src="/product-placeholder.png" alt="Product 1" width="200"/>
+    <section title="Recently Viewed Posts">
+        <h2>Recently Viewed Posts</h2>
+        <div class="post-list">
+            <div class="post">
+                <a href="/post-1-url" title="Post 1">
+                    <img src="/post-placeholder.jpg" alt="Post 1" width="200"/>
                 </a>
-                <a href="/product-1-url" title="Product 1">Product 1</a>
-                <span>$33.33</span>
-                <button type="button">Add To Cart</button>
+                <a href="/post-1-url" title="Post 1">Post 1</a>
+                <button type="button">Read</button>
             </div>
-            <div class="product">
-                <a href="/product-2-url" title="Product 2">
-                    <img src="/product-placeholder.png" alt="Product 2" width="200"/>
+            <div class="post">
+                <a href="/post-2-url" title="Post 2">
+                    <img src="/post-placeholder.jpg" alt="Post 2" width="200"/>
                 </a>
-                <a href="/product-2-url" title="Product 2">Product 2</a>
-                <span>$66.66</span>
-                <button type="button">Add To Cart</button>
+                <a href="/post-2-url" title="Post 2">Post 2</a>
+                <button type="button">Read</button>
             </div>
-            <div class="product">
-                <a href="/product-3-url" title="Product 3">
-                    <img src="/product-placeholder.png" alt="Product 3" width="200"/>
+            <div class="post">
+                <a href="/post-3-url" title="Post 3">
+                    <img src="/post-placeholder.jpg" alt="Post 3" width="200"/>
                 </a>
-                <a href="/product-3-url" title="Product 3">Product 3</a>
-                <span>$99.99</span>
-                <button type="button">Add To Cart</button>
+                <a href="/post-3-url" title="Post 3">Post 3</a>
+                <button type="button">Read</button>
             </div>
         </div>
     </section>
@@ -74,7 +71,7 @@
             </li>
         </ul>
     </nav>
-    <p>© Default Value 2021. All Rights Reserved.</p>
+    <p>© Iurii Troinikov 2021. All Rights Reserved.</p>
 </footer>
 </body>
 </html>
