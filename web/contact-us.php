@@ -1,3 +1,7 @@
+<?php
+require_once 'data.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +26,15 @@
     <a href="/" title="Iurii Troinikov Blog">
         <img src="logo.jpg" alt="Blog Logo" width="200"/>
     </a>
-    <menu>
-        <li>Category 1</li>
-        <li>Category 2</li>
-        <li>Category 3</li>
-        <li>Category 4</li>
-    </menu>
+    <nav>
+        <ul>
+            <?php foreach (catalogGetCategory() as $category) : ?>
+                <li>
+                    <a href="/<?php echo $category['url']?>"><?= $category['name']?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
 </header>
 <main>
     <form method="post" action="/send-contact-us-request">
