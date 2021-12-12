@@ -37,9 +37,9 @@ require_once 'data.php';
     </nav>
 </header>
 <main>
-    <img src="post-placeholder.jpg" alt="Post 1" width="300"/>
-    <h1>Post 1</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque dolore eos exercitationem, impedit laudantium minima minus molestias quaerat quam, quidem repellendus sit temporibus veniam veritatis.</p>
+    <img src="post-placeholder.jpg" alt="<?= $data['name'] ?>" width="300"/>
+    <h1><?= $data['name'] ?></h1>
+    <p><?= $data['description'] ?></p>
     <button type="button">Read</button>
 </main>
 <footer>

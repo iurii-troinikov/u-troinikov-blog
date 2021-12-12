@@ -21,12 +21,12 @@ function catalogGetCategory(): array
              'category_id' => 3,
              'name' => 'All holidays',
              'url' => 'all-holidays',
-             'posts' => [7, 8, 9]
+             'posts' => [2, 4, 6]
             ],
         ];
 }
 
-function catalogGetPosts(): array
+function catalogGetPost(): array
 {
     return [
         1 => [
@@ -67,6 +67,53 @@ function catalogGetPosts(): array
         ],
     ];
 }
+
+function catalogGetCategoryPost(int $categoryId): array
+{
+    $categories = catalogGetCategory();
+    if (!isset($categories[$categoryId])) {
+        throw new InvalidArgumentException("Category with ID $categoryId does not exists");
+    }
+
+    $postsForCategory = [];
+    $posts = catalogGetPost();
+
+    foreach ($categories[$categoryId]['posts'] as $postId) {
+        if (!isset($posts[$postId])) {
+            throw new InvalidArgumentException("Post with ID $postId from category $categoryId does not exists ");
+        }
+        $postsForCategory[] = $posts[$postId];
+    }
+
+        return $postsForCategory;
+    }
+
+    function catalogGetCategoryByUrl(string  $url): ?array
+    {
+        $data = array_filter(
+            catalogGetCategory(),
+            static function ($category) use ($url)
+            {
+                return $category['url'] === $url;
+            }
+        );
+
+        return array_pop($data);
+    }
+
+function catalogGetPostByUrl(string  $url): ?array
+{
+    $data = array_filter(
+        catalogGetPost(),
+        static function ($post) use ($url)
+        {
+            return $post['url'] === $url;
+        }
+    );
+
+    return array_pop($data);
+}
+
 
 
 

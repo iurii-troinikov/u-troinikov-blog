@@ -37,6 +37,9 @@ require_once 'data.php';
    </nav>
 </header>
 <main>
+
+    <!-- @TODO: Implement recently viewed products -->
+
     <section title="Recently Viewed Posts">
         <h2>Recently Viewed Posts</h2>
         <div class="post-list">
