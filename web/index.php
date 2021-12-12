@@ -1,10 +1,7 @@
 <?php
-
 declare(strict_types=1);
-
-require_once 'data.php';
+require_once '../src/data.php';
 $requestUri = trim($_SERVER['REQUEST_URI'], '/');
-
 switch ($requestUri) {
     case '':
         $page = 'home.php';
@@ -17,13 +14,17 @@ switch ($requestUri) {
             $page = 'category.php';
             break;
         }
-
         if ($data = catalogGetPostByUrl($requestUri)) {
             $page = 'post.php';
             break;
         }
-
         break;
 }
-
-require_once $page;
+if (!isset($page)) {
+    header("HTTP/1.0 404 Not Found");
+    exit(0);
+}
+header('Content-Type: text/html; charset=utf-8');
+ob_start();
+require_once "../src/page.php";
+echo ob_get_clean();

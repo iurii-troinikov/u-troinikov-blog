@@ -1,5 +1,5 @@
 <?php
-require_once 'data.php';
+require_once '../src/data.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ require_once 'data.php';
 <body>
 <header>
     <a href="/" title="Iurii Troinikov Blog">
-        <img src="logo.jpg" alt="Blog logo" width="200"/>
+        <img src="logo.jpg" alt="Blog Logo" width="200"/>
     </a>
     <nav>
         <ul>
@@ -37,22 +37,7 @@ require_once 'data.php';
     </nav>
 </header>
 <main>
-    <section title="Posts">
-        <h1><?= $data['name'] ?></h1>
-        <div class="post-list">
-            <?php foreach (catalogGetCategoryPost($data['category_id']) as $post) : ?>
-                <div class="post">
-                    <a href="/<?= $post['url']?>" title="<?= $post['name']?>">
-                        <img src="/post-placeholder.jpg" alt="<?= $post['name']?>" width="200"/>
-                    </a>
-                    <a href="/<?= $post['url']?>" title="<?= $post['name']?>"><?= $post['name']?></a>
-
-                    <button type="button">Read</button>
-                </div>
-            <?php endforeach; ?>
-
-        </div>
-    </section>
+    <?php require_once "../src/pages/$page" ?>
 </main>
 <footer>
     <nav>

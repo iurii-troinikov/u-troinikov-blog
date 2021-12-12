@@ -25,7 +25,6 @@ function catalogGetCategory(): array
             ],
         ];
 }
-
 function catalogGetPost(): array
 {
     return [
@@ -67,27 +66,22 @@ function catalogGetPost(): array
         ],
     ];
 }
-
 function catalogGetCategoryPost(int $categoryId): array
 {
     $categories = catalogGetCategory();
     if (!isset($categories[$categoryId])) {
         throw new InvalidArgumentException("Category with ID $categoryId does not exists");
     }
-
     $postsForCategory = [];
     $posts = catalogGetPost();
-
     foreach ($categories[$categoryId]['posts'] as $postId) {
         if (!isset($posts[$postId])) {
             throw new InvalidArgumentException("Post with ID $postId from category $categoryId does not exists ");
         }
         $postsForCategory[] = $posts[$postId];
     }
-
         return $postsForCategory;
     }
-
     function catalogGetCategoryByUrl(string  $url): ?array
     {
         $data = array_filter(
@@ -100,7 +94,6 @@ function catalogGetCategoryPost(int $categoryId): array
 
         return array_pop($data);
     }
-
 function catalogGetPostByUrl(string  $url): ?array
 {
     $data = array_filter(
@@ -110,7 +103,6 @@ function catalogGetPostByUrl(string  $url): ?array
             return $post['url'] === $url;
         }
     );
-
     return array_pop($data);
 }
 
