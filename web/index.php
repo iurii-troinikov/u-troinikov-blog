@@ -16,24 +16,3 @@ try {
     echo "{$e->getMessage()} in file {$e->getFile()} at line {$e->getLine()}";
     exit(1);
 }
-
-//    $requestDispatcher = new \Blog\Framework\Http\RequestDispatcher([
- //   new \Blog\Cms\Router(),
- //   new \Blog\Catalog\Router(),
-//    new \Blog\ContactUs\Router(),
-
- //   ]);
-//    $requestDispatcher->dispatch();
-
-
-exit;
-
-
-
-switch ($requestUri) {
-
-    default:
-
-        break;
-}
-
