@@ -4,23 +4,33 @@ declare(strict_types=1);
 
 namespace Blog\Cms\Controller;
 
+use Blog\Framework\Http\Response\Raw;
+use Blog\Framework\View\Block;
+
 class Page implements \Blog\Framework\Http\ControllerInterface
 {
+    private \Blog\Framework\View\PageResponse $pageResponse;
     private \Blog\Framework\Http\Request $request;
 
     /**
      * @param \Blog\Framework\Http\Request $request
+     * @param \Blog\Framework\View\PageResponse $pageResponse
      */
     public function __construct(
-        \Blog\Framework\Http\Request $request
+        \Blog\Framework\Http\Request $request,
+        \Blog\Framework\View\PageResponse $pageResponse
     ) {
+        $this->pageResponse = $pageResponse;
         $this->request = $request;
     }
-    public function execute(): string
+    /**
+     * @return Raw
+     */
+    public function execute(): Raw
     {
-        $page = $this->request->getParameter('page') . '.php';
-        ob_start();
-        require_once "../src/page.php";
-        return ob_get_clean();
+        return $this->pageResponse->setBody(
+Block::class,
+            '../src/Blog/Cms/view/' . $this->request->getParameter('page') . '.php'
+        );
     }
 }

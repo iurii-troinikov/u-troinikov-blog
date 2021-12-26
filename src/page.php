@@ -3,7 +3,6 @@
 /** @var \Blog\Framework\View\Renderer $this */
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +32,7 @@
     </nav>
 </header>
 <main>
-    <?= $this->render($this->getContent()) ?>
+    <?= $this->render($this->getContent(), $this->getContentBlockTemplate()) ?>
 </main>
 <footer>
     <nav>
