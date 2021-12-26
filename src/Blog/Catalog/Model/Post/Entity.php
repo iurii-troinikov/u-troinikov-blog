@@ -2,30 +2,36 @@
 
 declare(strict_types=1);
 
-namespace Blog\Catalog\Model\Category;
+namespace Blog\Catalog\Model\Post;
 
 class Entity
 {
-    private int $categoryId;
+    private int $postId;
+
     private string $name;
+
     private string $url;
-    private array $posts;
+
+    private string $description;
     /**
      * @return int
      */
-    public function getCategoryId(): int
+    public function getPostId(): int
     {
-        return $this->categoryId;
+        return $this->postId;
     }
+
     /**
-     * @param int $categoryId
+     * @param int $postId
      * @return $this
      */
-    public function setCategoryId(int $categoryId): Entity
+    public function setPostId(int $postId): Entity
     {
-        $this->categoryId = $categoryId;
+        $this->postId = $postId;
+
         return $this;
     }
+
     /**
      * @return string
      */
@@ -33,6 +39,7 @@ class Entity
     {
         return $this->name;
     }
+
     /**
      * @param string $name
      * @return $this
@@ -40,8 +47,10 @@ class Entity
     public function setName(string $name): Entity
     {
         $this->name = $name;
+
         return $this;
     }
+
     /**
      * @return string
      */
@@ -49,6 +58,7 @@ class Entity
     {
         return $this->url;
     }
+
     /**
      * @param string $url
      * @return $this
@@ -56,22 +66,26 @@ class Entity
     public function setUrl(string $url): Entity
     {
         $this->url = $url;
+
         return $this;
     }
+
     /**
-     * @return array
+     * @return string
      */
-    public function getPostIds(): array
+    public function getDescription(): string
     {
-        return $this->posts;
+        return $this->description;
     }
+
     /**
-     * @param array $posts
+     * @param string $description
      * @return $this
      */
-    public function setPostIds(array $posts): Entity
+    public function setDescription(string $description): Entity
     {
-        $this->posts = $posts;
+        $this->description = $description;
+
         return $this;
     }
 }

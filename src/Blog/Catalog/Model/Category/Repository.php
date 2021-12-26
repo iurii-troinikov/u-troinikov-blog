@@ -24,17 +24,17 @@ class Repository
                 ->setCategoryId(1)
                 ->setName('Summer holidays')
                 ->setUrl('summer-holidays')
-                ->setPosts([1, 2, 3]),
+                ->setPostIds([1, 2, 3]),
             2 => $this->makeEntity()
                 ->setCategoryId(2)
                 ->setName('Winter holidays')
                 ->setUrl('winter-holidays')
-                ->setPosts([4, 5, 6]),
+                ->setPostIds([4, 5, 6]),
             3 => $this->makeEntity()
                 ->setCategoryId(3)
                 ->setName('All holidays')
                 ->setUrl('all-holidays')
-                ->setPosts([2, 4, 6]),
+                ->setPostIds([2, 4, 6]),
         ];
     }
     /**
