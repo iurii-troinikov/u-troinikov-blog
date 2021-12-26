@@ -1,6 +1,6 @@
 <?php
 
-require_once '../src/data.php';
+/** @var \Blog\Framework\View\Renderer $this */
 
 ?>
 
@@ -29,17 +29,11 @@ require_once '../src/data.php';
         <img src="logo.jpg" alt="Blog Logo" width="200"/>
     </a>
     <nav>
-        <ul>
-            <?php foreach (catalogGetCategory() as $categoryData) : ?>
-                <li>
-                    <a href="/<?php echo $categoryData['url']?>"><?= $categoryData['name']?></a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+         <?= $this->render(\Blog\Catalog\Block\CategoryList::class) ?>
     </nav>
 </header>
 <main>
-    <?php require_once "../src/pages/$page" ?>
+    <?= $this->render($this->getContent()) ?>
 </main>
 <footer>
     <nav>

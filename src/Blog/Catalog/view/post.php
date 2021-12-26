@@ -1,6 +1,7 @@
 <?php
 
-/** @var \Blog\Catalog\Model\Post\Entity $post */
+/** @var \Blog\Catalog\Block\Post $block */
+$post = $block->getPost();
 ?>
 <div class="post-page">
     <img src="post-placeholder.jpg" alt="<?= $post->getName() ?>" width="300"/>

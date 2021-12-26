@@ -8,22 +8,18 @@ use Blog\Framework\Http\ControllerInterface;
 
 class Post implements ControllerInterface
 {
-    private \Blog\Framework\Http\Request $request;
+    private \Blog\Framework\View\Renderer $renderer;
 
     /**
-     * @param \Blog\Framework\Http\Request $request
+     * @param \Blog\Framework\View\Renderer $renderer
      */
     public function __construct(
-        \Blog\Framework\Http\Request $request
+        \Blog\Framework\View\Renderer $renderer
     ) {
-        $this->request = $request;
+        $this->renderer = $renderer;
     }
     public function execute(): string
     {
-        $post = $this->request->getParameter('post');
-        $page = 'post.php';
-        ob_start();
-        require_once "../src/page.php";
-        return ob_get_clean();
+        return (string) $this->renderer->setContent(\Blog\Catalog\Block\Post::class);
     }
 }
