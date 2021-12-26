@@ -81,35 +81,14 @@ function catalogGetCategoryPost(int $categoryId): array
         $postsForCategory[] = $posts[$postId];
     }
         return $postsForCategory;
-    }
-    function catalogGetCategoryByUrl(string  $url): ?array
-    {
-        $data = array_filter(
-            catalogGetCategory(),
-            static function ($category) use ($url)
-            {
-                return $category['url'] === $url;
-            }
-        );
-
-        return array_pop($data);
-    }
-function catalogGetPostByUrl(string  $url): ?array
+}
+function catalogGetPostByUrl(string $url): ?array
 {
     $data = array_filter(
         catalogGetPost(),
-        static function ($post) use ($url)
-        {
+        static function ($post) use ($url) {
             return $post['url'] === $url;
         }
     );
     return array_pop($data);
 }
-
-
-
-
-
-
-
-

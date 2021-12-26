@@ -1,5 +1,7 @@
 <?php
+
 require_once '../src/data.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +30,9 @@ require_once '../src/data.php';
     </a>
     <nav>
         <ul>
-            <?php foreach (catalogGetCategory() as $category) : ?>
+            <?php foreach (catalogGetCategory() as $categoryData) : ?>
                 <li>
-                    <a href="/<?php echo $category['url']?>"><?= $category['name']?></a>
+                    <a href="/<?php echo $categoryData['url']?>"><?= $categoryData['name']?></a>
                 </li>
             <?php endforeach; ?>
         </ul>

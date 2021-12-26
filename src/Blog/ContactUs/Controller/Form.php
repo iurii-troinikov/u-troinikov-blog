@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace Blog\ContactUs\Controller;
 
 use Blog\Framework\Http\ControllerInterface;

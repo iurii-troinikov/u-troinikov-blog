@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Blog\ContactUs;
@@ -10,12 +11,11 @@ class Router implements \Blog\Framework\Http\RouterInterface
     /**
      * @inheritDoc
      */
-public function match(string $requestUrl): string
-{
-    if ($requestUrl === 'contact-us') {
-        return Form::class;
+    public function match(string $requestUrl): string
+    {
+        if ($requestUrl === 'contact-us') {
+            return Form::class;
+        }
+        return '';
     }
-    return '';
 }
-}
-

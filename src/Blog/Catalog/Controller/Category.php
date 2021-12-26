@@ -8,9 +8,7 @@ use Blog\Framework\Http\ControllerInterface;
 
 class Category implements ControllerInterface
 {
-
     private \Blog\Framework\Http\Request $request;
-
     /**
      * @param \Blog\Framework\Http\Request $request
      */
@@ -21,7 +19,7 @@ class Category implements ControllerInterface
     }
     public function execute(): string
     {
-        $data = $this->request->getParameter('category');
+        $category = $this->request->getParameter('category');
         $page = 'category.php';
         ob_start();
         require_once "../src/page.php";

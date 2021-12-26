@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Blog\Framework\Http;
@@ -10,6 +11,4 @@ interface RouterInterface
      * @return string
      */
     public function match(string $requestUrl): string;
-
 }
-
