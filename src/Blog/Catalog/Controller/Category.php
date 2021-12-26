@@ -5,21 +5,24 @@ declare(strict_types=1);
 namespace Blog\Catalog\Controller;
 
 use Blog\Framework\Http\ControllerInterface;
+use Blog\Framework\Http\Response\Raw;
 
 class Category implements ControllerInterface
 {
-    private \Blog\Framework\View\Renderer $renderer;
-
+    private \Blog\Framework\View\PageResponse $pageResponse;
     /**
-     * @param \Blog\Framework\View\Renderer $renderer
+     * @param \Blog\Framework\View\PageResponse $pageResponse
      */
     public function __construct(
-        \Blog\Framework\View\Renderer $renderer
+        \Blog\Framework\View\PageResponse $pageResponse
     ) {
-        $this->renderer = $renderer;
+        $this->pageResponse = $pageResponse;
     }
-    public function execute(): string
+    /**
+     * @return Raw
+     */
+    public function execute(): Raw
     {
-        return (string) $this->renderer->setContent(\Blog\Catalog\Block\Category::class);
+        return $this->pageResponse->setBody(\Blog\Catalog\Block\Category::class);
     }
 }
