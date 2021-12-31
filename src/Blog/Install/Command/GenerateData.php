@@ -116,8 +116,8 @@ class GenerateData extends \Symfony\Component\Console\Command\Command
     {
         $statement = $this->adapter->getConnection()
             ->prepare(<<<SQL
-                INSERT INTO post (`sku`, `name`, `url`, `description`, `qty`)
-                VALUES (:sku, :name, :url, :description, :qty);
+                INSERT INTO post (`sku`, `name`, `url`, `description`, `qty`, `created_at`)
+                VALUES (:sku, :name, :url, :description, :qty, :created_at);
             SQL);
 
         for ($i = 1; $i <= self::POSTS_COUNT; $i++) {
@@ -128,6 +128,7 @@ class GenerateData extends \Symfony\Component\Console\Command\Command
             $statement->bindValue(':url', $url);
             $statement->bindValue(':description', "$name short description text");
             $statement->bindValue(':qty', random_int(0, 10), \PDO::PARAM_INT);
+            $statement->bindValue(':created_at', date('Y-m-d', random_int(1633046400, 1635724800)));
             $statement->execute();
         }
     }
