@@ -7,6 +7,8 @@ namespace Blog\Catalog\Model\Category;
 class Repository
 {
     private \DI\FactoryInterface $factory;
+
+    public const TABLE = 'category';
     /**
      * @param \DI\FactoryInterface $factory
      */
