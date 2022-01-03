@@ -54,13 +54,28 @@ class GenerateData extends \Symfony\Component\Console\Command\Command
      * Generate test data
      *
      * @return void
+     * @throws \Exception
      */
     private function generateData(): void
     {
-        $this->profile([$this, 'truncateTables']);
-        $this->profile([$this, 'generateCategories']);
-        $this->profile([$this, 'generatePosts']);
-        $this->profile([$this, 'generatePostCategories']);
+        $callbacks = [
+            [$this, 'truncateTables'],
+            [$this, 'generateCategories'],
+            [$this, 'generatePosts'],
+            [$this, 'generatePostCategories'],
+        ];
+        $connection = $this->adapter->getConnection();
+
+        foreach ($callbacks as $callback) {
+            try {
+                $connection->beginTransaction();
+                $this->profile($callback);
+                $connection->commit();
+            } catch (\Exception $e) {
+                $connection->rollBack();
+                throw $e;
+            }
+        }
     }
 
     /**
