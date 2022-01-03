@@ -9,6 +9,9 @@
     <meta charset="UTF-8">
     <title>Iurii Troinikov Blog</title>
     <style>
+        html {
+            max-width: 100%;
+        }
         header,
         main,
         footer {
@@ -16,6 +19,7 @@
         }
         .post-list {
             display: flex;
+            flex-wrap: wrap;
         }
         .post-list .post {
             max-width: 30%;

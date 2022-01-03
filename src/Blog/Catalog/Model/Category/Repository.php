@@ -4,60 +4,24 @@ declare(strict_types=1);
 
 namespace Blog\Catalog\Model\Category;
 
-class Repository
+class Repository extends \Blog\Framework\Database\AbstractRepository
 {
-    private \DI\FactoryInterface $factory;
-
     public const TABLE = 'category';
-    /**
-     * @param \DI\FactoryInterface $factory
-     */
-    public function __construct(\DI\FactoryInterface $factory)
-    {
-        $this->factory = $factory;
-    }
-    /**
-     * @return Entity[]
-     */
-    public function getList(): array
-    {
-        return [
-            1 => $this->makeEntity()
-                ->setCategoryId(1)
-                ->setName('Summer holidays')
-                ->setUrl('summer-holidays')
-                ->setPostIds([1, 2, 3]),
-            2 => $this->makeEntity()
-                ->setCategoryId(2)
-                ->setName('Winter holidays')
-                ->setUrl('winter-holidays')
-                ->setPostIds([4, 5, 6]),
-            3 => $this->makeEntity()
-                ->setCategoryId(3)
-                ->setName('All holidays')
-                ->setUrl('all-holidays')
-                ->setPostIds([2, 4, 6]),
-        ];
-    }
+    public const ENTITY = Entity::class;
+
     /**
      * @param string $url
-     * @return ?Entity
+     * @return object|null
+     * @throws \DI\DependencyException
+     * @throws \DI\NotFoundException
      */
-    public function getByUrl(string $url): ?Entity
+    public function getByUrl(string $url)
     {
-        $data = array_filter(
-            $this->getList(),
-            static function ($category) use ($url) {
-                return $category->getUrl() === $url;
-            }
+        return $this->fetchOne(
+            $this->select()->where('url = :url'),
+            [
+                ':url' => $url
+            ]
         );
-        return array_pop($data);
-    }
-    /**
-     * @return Entity
-     */
-    private function makeEntity(): Entity
-    {
-        return $this->factory->make(Entity::class);
     }
 }

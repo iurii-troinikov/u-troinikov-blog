@@ -34,12 +34,14 @@ class Category extends \Blog\Framework\View\Block
     }
 
     /**
-     * @return PostEntity[]
+     * @return array
+     * @throws \DI\DependencyException
+     * @throws \DI\NotFoundException
      */
     public function getCategoryPosts(): array
     {
-        return $this->postRepository->getByIds(
-            $this->getCategory()->getPostIds()
+        return $this->postRepository->getByCategoryId(
+            $this->getCategory()->getCategoryId()
         );
     }
 }
