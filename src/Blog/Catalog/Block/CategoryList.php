@@ -22,9 +22,7 @@ class CategoryList extends \Blog\Framework\View\Block
     }
 
     /**
-     * @return array
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
+     * @return CategoryEntity[]
      */
     public function getCategories(): array
     {

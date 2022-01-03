@@ -51,6 +51,7 @@ class RequestDispatcher
                     );
                 }
                    $response = $controller->execute();
+                break;
             }
         }
         if (!isset($response)) {

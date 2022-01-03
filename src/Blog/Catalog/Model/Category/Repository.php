@@ -12,8 +12,6 @@ class Repository extends \Blog\Framework\Database\AbstractRepository
     /**
      * @param string $url
      * @return object|null
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
      */
     public function getByUrl(string $url)
     {

@@ -15,8 +15,6 @@ class Repository extends \Blog\Framework\Database\AbstractRepository
     /**
      * @param string $url
      * @return Entity|object|null
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
      */
     public function getByUrl(string $url): ?Entity
     {
@@ -31,9 +29,6 @@ class Repository extends \Blog\Framework\Database\AbstractRepository
     /**
      * @param int $categoryId
      * @return Entity[]
-     * @return array
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
      */
     public function getByCategoryId(int $categoryId): array
     {

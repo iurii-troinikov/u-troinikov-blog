@@ -34,9 +34,7 @@ class Category extends \Blog\Framework\View\Block
     }
 
     /**
-     * @return array
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
+     * @return PostEntity[]
      */
     public function getCategoryPosts(): array
     {
