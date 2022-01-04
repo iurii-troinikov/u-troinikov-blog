@@ -29,9 +29,8 @@ class AbstractRepository
     }
 
     /**
+     * Get clean select for further modification
      * @return MySQLSelectQuery
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
      */
     public function select(): MySQLSelectQuery
     {
@@ -40,11 +39,10 @@ class AbstractRepository
     }
 
     /**
+     * FEtch entities with ability to filter data with WHERE clause
      * @param MySQLSelectQuery|null $query
      * @param array $bind
      * @return array
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
      */
     public function fetchEntities(MySQLSelectQuery $query = null, array $bind = []): array
     {
@@ -68,8 +66,6 @@ class AbstractRepository
      * @param MySQLSelectQuery|null $query
      * @param array $where
      * @return object|null
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
      */
     public function fetchOne(MySQLSelectQuery $query = null, array $where = []): ?object
     {
@@ -144,8 +140,6 @@ class AbstractRepository
 
     /**
      * @return object
-     * @throws \DI\DependencyException
-     * @throws \DI\NotFoundException
      */
     private function makeEntity(): object
     {

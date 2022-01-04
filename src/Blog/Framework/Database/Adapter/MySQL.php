@@ -25,7 +25,7 @@ class MySQL implements AdapterInterface
         $this->connectionParams = $connectionParams;
     }
 
-    public function getConnection()
+    public function getConnection(): \PDO
     {
         if (!isset(self::$connection)) {
             self::$connection = new \PDO(

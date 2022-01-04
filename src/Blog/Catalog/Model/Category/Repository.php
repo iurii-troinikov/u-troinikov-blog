@@ -13,7 +13,7 @@ class Repository extends \Blog\Framework\Database\AbstractRepository
      * @param string $url
      * @return object|null
      */
-    public function getByUrl(string $url)
+    public function getByUrl(string $url): ?object
     {
         return $this->fetchOne(
             $this->select()->where('url = :url'),

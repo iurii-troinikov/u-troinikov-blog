@@ -108,7 +108,7 @@ class GenerateData extends \Symfony\Component\Console\Command\Command
     private function generateCategories(): void
     {
         $categories = [
-            'Summer holidays', 'Winter holidays', 'All holidays'
+            'Summer-holidays', 'Winter-holidays', 'All-holidays'
         ];
         $statement = $this->adapter->getConnection()
             ->prepare(<<<SQL
