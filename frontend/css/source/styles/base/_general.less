@@ -5,27 +5,24 @@ body {
   font-size: 16px;
   font-family: @robotoSlab-Regular;
 }
-
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 a {
   text-decoration: none;
 }
-
 .content-wrapper {
   max-width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
 }
-
 button {
   background: @background-color-grape;
   font-size: 16px;
+  font-family: @robotoSlab-Medium;
   padding: 10px 15px;
   border-radius: 10px;
   color: @button-text-color;
@@ -34,10 +31,8 @@ button {
   z-index: 1;
   border: 1px solid transparent;
 }
-
 .button-hover {
   transition: all 0.3s;
-
   &:before {
     content: '';
     position: absolute;
@@ -53,11 +48,9 @@ button {
     transition-timing-function: ease-out;
     background: @button-text-color;
   }
-
   &:hover {
     color: @background-color-grape;
   }
-
   &:hover:before {
     transform: scaleX(1);
     transform-origin: 0 100%;

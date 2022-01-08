@@ -9,21 +9,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Iurii Troinikov Blog</title>
-    <link rel="preload" as="style" href="/css/reset.css"/>
-    <link rel="stylesheet" href="/css/reset.css"/>
-    <link rel="preload" as="style" href="/css/main.min.css"/>
-    <link rel="stylesheet" href="/css/main.min.css"/>
+    <link rel="preload" as="style" href="/web/css/reset.css"/>
+    <link rel="stylesheet" href="/web/css/reset.css"/>
+    <link rel="preload" as="style" href="/web/css/main.min.css"/>
+    <link rel="stylesheet" href="/web/css/main.min.css"/>
 </head>
 <body>
 <header>
-    <a href="/" title="Iurii Troinikov Blog">
-        <img src="logo.jpg" alt="Blog Logo" width="200"/>
-    </a>
-    <nav>
-         <?= $this->render(\Blog\Catalog\Block\CategoryList::class) ?>
-    </nav>
+    <div class="header-wrapper content-wrapper">
+        <a href="/" title="Iurii Troinikov Blog">
+            <img src="logo.jpg" alt="Blog Logo" width="200"/>
+        </a>
+        <nav>
+            <div class="menu-btn-mobile">
+                <button class="wrapper-button">
+                    <i></i><i></i><i></i>
+                </button>
+            </div>
+            <?= $this->render(\Blog\Catalog\Block\CategoryList::class) ?>
+        </nav>
+    </div>
 </header>
-<main>
+<main class="content-wrapper">
     <?= $this->render($this->getContent(), $this->getContentBlockTemplate()) ?>
 </main>
 <footer>

@@ -6,12 +6,12 @@
     <div class="post-list">
         <?php foreach ($block->getCategoryPosts() as $post) : ?>
             <div class="post">
-                <a href="/<?= $post->getUrl()?>" title="<?= $post->getName()?>">
-                    <img src="post-placeholder.jpg" alt="<?= $post->getName()?>" width="200"/>
+                <a href="/<?= $post->getUrl() ?>" title="<?= $post->getName() ?>" class="post-item-image">
+                    <img src="post-placeholder.jpg" alt="<?= $post->getName() ?>" />
                 </a>
-                <a href="/<?= $post->getUrl()?>" title="<?= $post->getName()?>"><?= $post->getName()?></a>
-                <button type="button">Read</button>
-            </div>
+                <a href="/<?= $post->getUrl() ?>" title="<?= $post->getName() ?>"
+                   class="post-item-title"><?= $post->getName() ?></a>
+                <button type="button" class="add-to-cart-button button-hover">Read</button>
         <?php endforeach; ?>
     </div>
 </div>
