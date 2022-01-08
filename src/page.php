@@ -7,24 +7,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Iurii Troinikov Blog</title>
-    <style>
-        html {
-            max-width: 100%;
-        }
-        header,
-        main,
-        footer {
-            border: 1px dashed black;
-        }
-        .post-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .post-list .post {
-            max-width: 30%;
-        }
-    </style>
+    <link rel="preload" as="style" href="/css/reset.css"/>
+    <link rel="stylesheet" href="/css/reset.css"/>
+    <link rel="preload" as="style" href="/css/main.min.css"/>
+    <link rel="stylesheet" href="/css/main.min.css"/>
 </head>
 <body>
 <header>
