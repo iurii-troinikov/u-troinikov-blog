@@ -1,8 +1,8 @@
 <?php
 /** @var \Blog\Catalog\Block\Category $block */
 ?>
-<div title="post-wrapper">
-    <h1><?= $block->getCategory()->getName() ?></h1>
+<div title="category-wrapper" class="category-page content-wrapper">
+    <h1 class="category-page-title"><?= $block->getCategory()->getName() ?></h1>
     <div class="post-list">
         <?php foreach ($block->getCategoryPosts() as $post) : ?>
             <div class="post">
