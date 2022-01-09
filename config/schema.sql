@@ -40,7 +40,7 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`name`, `url`)
 VALUES ('Summer holidays', 'summer-holidays'),
        ('Winter holidays', 'winter-holidays'),
-       ('All holidays', 'all-holidays');
+       ('Other holidays', 'other-holidays');
 #---
 CREATE TABLE `category_post` (
     `category_post_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',

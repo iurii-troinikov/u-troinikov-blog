@@ -14,7 +14,7 @@ class GenerateData extends \Symfony\Component\Console\Command\Command
     protected static $defaultName = 'install:generate-data';
     private \Blog\Framework\Database\Adapter\AdapterInterface $adapter;
     private OutputInterface $output;
-    private const POSTS_COUNT = 250;
+    private const POSTS_COUNT = 10;
 
     /**
      * @param \Blog\Framework\Database\Adapter\AdapterInterface $adapter
@@ -108,7 +108,7 @@ class GenerateData extends \Symfony\Component\Console\Command\Command
     private function generateCategories(): void
     {
         $categories = [
-            'Summer-holidays', 'Winter-holidays', 'All-holidays'
+            'Summer-holidays', 'Winter-holidays', 'Other-holidays'
         ];
         $statement = $this->adapter->getConnection()
             ->prepare(<<<SQL
