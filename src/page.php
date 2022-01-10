@@ -18,7 +18,7 @@
 <header>
     <div class="header-wrapper content-wrapper">
         <a href="/" title="Iurii Troinikov Blog">
-            <img src="logo.jpg" alt="Blog Logo" width="200"/>
+            <img src="/images/logo.jpg" alt="Blog Logo" width="200"/>
         </a>
         <nav>
             <div class="menu-btn-mobile">

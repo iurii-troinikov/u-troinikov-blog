@@ -3,8 +3,8 @@
     <div class="content-wrapper">
         <div class="content">
             <div class="welcome-section-title">
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <h2>consectetur adipisicing elit.</h2>
+                <h1>Welcome to my Blog!</h1>
+                <h2>Here you will find a lot of interesting things!</h2>
             </div>
             <div class="welcome-section-items">
                 <!-- 1 -->
