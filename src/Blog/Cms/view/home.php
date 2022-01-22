@@ -39,14 +39,13 @@
 <section title="Recently Viewed Posts">
     <div class="recently-viewed-slider-wrapper content-wrapper">
         <h2>Recently Viewed Posts</h2>
-        <div class="post-list recently-viewed-slider-wrapper">
-        <div class="recently-viewed-slider">
+        <div class="post-list recently-viewed-slider-wrapper campus-slider">
+       <!-- <div class="recently-viewed-slider">-->
             <div class="post">
                 <a href="/post-1-url" title="Post 1" class="post-item-image">
                     <img src="post-placeholder.jpg" alt="Post 1"/>
                 </a>
                 <a href="/post-1-url" title="Post 1" class="post-item-title">Post 1</a>
-
                 <button type="button" class="add-to-cart-button button-hover">Read</button>
             </div>
             <div class="post">
@@ -62,11 +61,24 @@
                     <img src="post-placeholder.jpg" alt="Post 3"/>
                 </a>
                 <a href="/post-3-url" title="Post 3" class="post-item-title">Post 3</a>
-
+                <button type="button" class="add-to-cart-button button-hover">Read</button>
+            </div>
+            <div class="post">
+                <a href="/post-4-url" title="Post 4" class="post-item-image">
+                    <img src="post-placeholder.jpg" alt="Post 4"/>
+                </a>
+                <a href="/post-4-url" title="Post 4" class="post-item-title">Post 4</a>
+                <button type="button" class="add-to-cart-button button-hover">Read</button>
+            </div>
+            <div class="post">
+                <a href="/post-5-url" title="Post 4" class="post-item-image">
+                    <img src="post-placeholder.jpg" alt="Post 5"/>
+                </a>
+                <a href="/post-5-url" title="Post 5" class="post-item-title">Post 5</a>
                 <button type="button" class="add-to-cart-button button-hover">Read</button>
             </div>
         </div>
-        <button class="slider-control-prev slider-control button-hover" type="button">
+        <!--<button class="slider-control-prev slider-control button-hover" type="button">
             <span class="slider-control-prev-icon"><i class="fas fa-chevron-left"></i></span>
             <span class="slider-control-prev-title">Previous</span>
         </button>
@@ -74,7 +86,7 @@
             <span class="slider-control-next-icon"><i class="fas fa-chevron-right"></i></span>
             <span class="slider-control-prev-title">Next</span>
         </button>
-    </div>
+    </div>-->
     </div>
 </section>
 <section class="special-posts-section">
